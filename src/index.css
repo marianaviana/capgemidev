@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --app-base-size: 16.5px;
+  }
+
+  html {
+    font-size: var(--app-base-size);
+  }
+
+  html.font-size-normal {
+    --app-base-size: 16.5px;
+  }
+
+  html.font-size-large {
+    --app-base-size: 18.5px;
+  }
+
+  html.font-size-xlarge {
+    --app-base-size: 21px;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Print styles for last-minute review sheet */
+@media print {
+  header, nav, .no-print, button, .filter-bar, .modal-backdrop {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .card-item {
+    break-inside: avoid;
+    border: 1px solid #cbd5e1 !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+  }
+  .card-item * {
+    color: #0f172a !important;
+  }
+  .card-item code {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+  }
+}
